@@ -1,0 +1,7 @@
+= markout
+
+Description goes here.
+
+== Copyright
+
+Copyright (c) 2009 Karel Minarik. See LICENSE for details.
