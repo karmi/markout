@@ -1,0 +1,102 @@
+/* 
+= COLORS =
+
+Steel blue              #d8dde3
+Black blue              #172533
+Dark grey               #525c66
+Ash grey                #dfe2e5
+Live blue               #1177DD
+Pale green face         #b9cbdd
+
+*/
+
+body {
+  color: #222;
+  background: #fafafa;
+  font-family: Helvetica, sans-serif;
+  font-size: 85%;
+  line-height: 155%;
+  margin: 0;
+  padding: 0 5em;
+}
+
+.cleaner
+  { clear: both; height: 0; line-height: 0; width: 0; border: 0; font-size: 1px; }
+
+#content {
+  color: #172533;
+  font-size: 1.1em;
+  max-width: 55em;
+  padding-bottom: 4em;
+  margin: 7px auto;
+  margin-bottom: 4em;
+  border-top: 4px solid #172533;
+  border-bottom: 4px solid #b9cbdd;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #222;
+}
+h1, h2 {
+  color: #172533;
+  font-weight: normal;
+}
+h1 a, h2 a { color: #172533; }
+
+h1 {
+  font-size: 2.25em;
+  letter-spacing: -1px;
+  margin-bottom: 0.5em;
+}
+
+h2 {
+  font-size: 1.5em;
+  letter-spacing: -1px;
+  padding: 1.15em 0 0 0;
+  margin: 1.25em 0 0.25em 0;
+  border-top: 4px solid #d8dde3;
+}
+
+h3 {
+  color: #172533;
+  font-size: 1.1em;
+  font-weight:bold;
+  margin: 1.8em 0 0.25em 0;
+  letter-spacing:-1px;
+}
+
+h3 a {
+  text-decoration:underline;
+}
+
+p {
+  margin: 0 0 0.8em 0;
+}
+
+a {
+  color: #172533;
+  text-decoration:underline;
+}
+a:hover {
+  color: #1177DD;
+  text-decoration:underline;
+}
+a img {
+  border:none;
+}
+
+code, pre, textarea, tt {
+  font-family: "Monaco", "lucida console", "bitstream vera sans mono", monospace;
+  font-size: 100%;
+}
+pre {
+  color: #172533;
+  background: #f5f9fc;
+  font-size: 100%;
+  line-height: 155%;
+  border: 4px solid #dfe2e5;
+  padding: 0.5em;
+  white-space: pre-wrap; white-space: -moz-pre-wrap !important;
+}
+
+hr { display: none; }
