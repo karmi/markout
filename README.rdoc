@@ -1,6 +1,7 @@
-= markout
+= Markout
 
-Description goes here.
+Markout makes it easy to export sexy formatted documents such as specifications from your plain text, Markdown-formatted files.
+
 
 == Copyright
 

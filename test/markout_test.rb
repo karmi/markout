@@ -1,7 +1,5 @@
-require 'test_helper'
+require File.join(File.dirname(__FILE__), 'test_helper')
 
-class MarkoutTest < Test::Unit::TestCase
-  def test_something_for_real
-    flunk "hey buddy, you should probably rename this file and start testing for real"
-  end
-end
+# Load all testfiles excluding self
+(Dir['*_test.rb'] - [File.basename(__FILE__)]).each { |testcase| require testcase }
+

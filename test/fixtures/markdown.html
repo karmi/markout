@@ -1,0 +1,467 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+	<title>Markdown</title>
+
+  <style type="text/css" media="screen">
+  /* 
+= COLORS =
+
+Steel blue              #d8dde3
+Black blue              #172533
+Dark grey               #525c66
+Ash grey                #dfe2e5
+Live blue               #1177DD
+Pale green face         #b9cbdd
+
+*/
+
+body {
+  color: #222;
+  background: #fafafa;
+  font-family: Helvetica, sans-serif;
+  font-size: 85%;
+  line-height: 155%;
+  margin: 0;
+  padding: 0 5em;
+}
+
+.cleaner
+  { clear: both; height: 0; line-height: 0; width: 0; border: 0; font-size: 1px; }
+
+#content {
+  color: #172533;
+  font-size: 1.1em;
+  max-width: 55em;
+  padding-bottom: 4em;
+  margin: 7px auto;
+  margin-bottom: 4em;
+  border-top: 4px solid #172533;
+  border-bottom: 4px solid #b9cbdd;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #222;
+}
+h1, h2 {
+  color: #172533;
+  font-weight: normal;
+}
+h1 a, h2 a { color: #172533; }
+
+h1 {
+  font-size: 2.25em;
+  letter-spacing: -1px;
+  margin-bottom: 0.5em;
+}
+
+h2 {
+  font-size: 1.5em;
+  letter-spacing: -1px;
+  padding: 1.15em 0 0 0;
+  margin: 1.25em 0 0.25em 0;
+  border-top: 4px solid #d8dde3;
+}
+
+h3 {
+  color: #172533;
+  font-size: 1.1em;
+  font-weight:bold;
+  margin: 1.8em 0 0.25em 0;
+  letter-spacing:-1px;
+}
+
+h3 a {
+  text-decoration:underline;
+}
+
+p {
+  margin: 0 0 0.8em 0;
+}
+
+a {
+  color: #172533;
+  text-decoration:underline;
+}
+a:hover {
+  color: #1177DD;
+  text-decoration:underline;
+}
+a img {
+  border:none;
+}
+
+code, pre, textarea, tt {
+  font-family: "Monaco", "lucida console", "bitstream vera sans mono", monospace;
+  font-size: 100%;
+}
+pre {
+  color: #172533;
+  background: #f5f9fc;
+  font-size: 100%;
+  line-height: 155%;
+  border: 4px solid #dfe2e5;
+  padding: 0.5em;
+  white-space: pre-wrap; white-space: -moz-pre-wrap !important;
+}
+
+hr { display: none; }
+
+  </style>
+
+  <style type="text/css" media="print">
+  body
+  { color: #000;
+    background: #fff;
+    font-size: 85%; 
+    font-family: Helvetica, sans-serif;
+    margin: 0.5cm; }
+
+a
+  { color: #000;
+    text-decoration: underline; }
+
+a img
+  { border: none; }
+
+h2 {
+  font-size: 1.5em;
+  letter-spacing: -0.05em;
+  padding: 1.15em 0 0 0;
+  margin: 1.25em 0 0.25em 0;
+  border-top: 1mm solid #999;
+}
+
+h3 {
+  font-size: 1.1em;
+  font-weight:bold;
+  margin: 1.8em 0 0.25em 0;
+  letter-spacing: -0.05em;
+}
+
+pre {
+  border: 1pt solid #ccc;
+  padding: 0.5em;
+  white-space: pre-wrap; white-space: -moz-pre-wrap !important;
+}
+
+  </style>
+
+</head>
+
+<body>
+
+  <div id="content">
+<h1>Markdown</h1>
+
+<h2>Download</h2>
+
+<p><a href="http://daringfireball.net/projects/downloads/Markdown_1.0.1.zip">Markdown 1.0.1</a> (18 KB) -- 17 Dec 2004</p>
+
+<h2>Introduction</h2>
+
+<p>Markdown is a text-to-HTML conversion tool for web writers. Markdown
+allows you to write using an easy-to-read, easy-to-write plain text
+format, then convert it to structurally valid XHTML (or HTML).</p>
+
+<p>Thus, "Markdown" is two things: (1) a plain text formatting syntax;
+and (2) a software tool, written in Perl, that converts the plain text
+formatting to HTML. See the <a href="/projects/markdown/syntax">Syntax</a> page for details pertaining to
+Markdown's formatting syntax. You can try it out, right now, using the
+online <a href="/projects/markdown/dingus">Dingus</a>.</p>
+
+<p>The overriding design goal for Markdown's formatting syntax is to make
+it as readable as possible. The idea is that a Markdown-formatted
+document should be publishable as-is, as plain text, without looking
+like it's been marked up with tags or formatting instructions. While
+Markdown's syntax has been influenced by several existing text-to-HTML
+filters, the single biggest source of inspiration for Markdown's
+syntax is the format of plain text email.</p>
+
+<p>The best way to get a feel for Markdown's formatting syntax is simply
+to look at a Markdown-formatted document. For example, you can view
+the Markdown source for the article text on this page here:
+<a href="http://daringfireball.net/projects/markdown/index.text">http://daringfireball.net/projects/markdown/index.text</a></p>
+
+<p>(You can use this '.text' suffix trick to view the Markdown source for
+the content of each of the pages in this section, e.g. the
+<a href="/projects/markdown/syntax.text">Syntax</a> and <a href="/projects/markdown/license.text">License</a> pages.)</p>
+
+<p>Markdown is free software, available under a BSD-style open source
+license. See the <a href="/projects/markdown/license">License</a> page for more information.</p>
+
+<h2>Discussion List <a id="discussion-list" /></h2>
+
+<p>I've set up a public <a href="http://six.pairlist.net/mailman/listinfo/markdown-discuss">mailing list for discussion about Markdown</a>.
+Any topic related to Markdown -- both its formatting syntax and
+its software -- is fair game for discussion. Anyone who is interested
+is welcome to join.</p>
+
+<p>It's my hope that the mailing list will lead to good ideas for future
+improvements to Markdown.</p>
+
+<h2>Installation and Requirements <a id="install" /></h2>
+
+<p>Markdown requires Perl 5.6.0 or later. Welcome to the 21st Century.
+Markdown also requires the standard Perl library module <a href="http://search.cpan.org/dist/Digest-MD5/MD5.pm">Digest::MD5</a>, which is probably already installed on your server.</p>
+
+<h3>Movable Type </h3>
+
+<p>Markdown works with Movable Type version 2.6 or later (including
+Movable Type 3.0).</p>
+
+<ol>
+<li><p>Copy the "Markdown.pl" file into your Movable Type "plugins"
+directory. The "plugins" directory should be in the same directory
+as "mt.cgi"; if the "plugins" directory doesn't already exist, use
+your FTP program to create it. Your installation should look like
+this:</p>
+
+<pre><code>(mt home)/plugins/Markdown.pl
+</code></pre></li>
+<li><p>Once installed, Markdown will appear as an option in Movable Type's
+Text Formatting pop-up menu. This is selectable on a per-post basis:</p>
+
+<p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAToAAACYCAMAAABDP9U/AAAABGdBTUEAANbY
+1E9YMgAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAAw
+UExURf////n5+fT09PHx8e3t7eXl5d3d3dTU1MfHx7i4uKampoyMjHZ2dmBg
+YElJSQUFBTRdP7YAABJHSURBVHja7F2JYqsgEPTgPv//b9/Mgkbz2jRtTHok
+5BABEcbZBXTBob7cF91Qx2Hj5ubUy33oAN3wgu4F3fdC93JXuxd0L+i+Hzrz
+cte6F3Qv6F7QvaB7QfdyL+he0L2ge0F3nfPe4d9au/p/i/ug5Jegc3Dv5uvC
+dTD4nIJxKeNjbcTffat7XmIbL53QxSWZD/6zJb8Anc1w8awkqRcNWSVErvtm
+690dkANKwQLkZEw6z/Bo5HiSbYneLtWKTlpRSufYfFjyS9Aljzx5MXqelnDa
+XkQv16zvW3OKWtMuheJhSB0TfP7OtIsp+821t+23K9HGb11uHhbNdWyuLvlF
+1vkOX+alC9iQt3IZXcdJ9pMkaF4UFD9J2+QlxfUi8hJvq3YHl32MRopge2FT
+zMIeKaNNISYAllkK3+i0EAGFhly21FeV/APokCm+NmSc29pgud+zi/S55J31
+OGWSpP06t7Qd23bCBcx4V+g8y7nSrZUouiBeVsKmFDzqpT0BDDakjdy6tKS+
+ruQXBVZ0HbOHxvA5hkapFonLl7vAeiqKfqndKW3Po7OvX8xwV2UHSnmRFSlG
+Jx+9vRI2i/hEkEuCusA2BBG51OGqkl9kHeqvkW/TGDgXLt1GoQm5cB4U1uIq
+rpplSbu/dtH1yoX7IWfZGvYLil/bOHp7JQSWgGuLhphBrjHBEVGRq5b6upJ/
+0Ex0RQAS+6b4AJNQPDqRUiuCIF5GQZdg1yGtSQt0oWuOduK76rqQOwKtGK1E
+QsBeCYEOkmqa7pFit2YCDEhx1yZ/WPIPdF0XdhSD/1EaACt6ITcVALUqzURr
+G8Buqmbf0raD5cLa3rb7nO7YKZZKAjfTisESuS4HrRKNUb6VPaalMVt0k16k
+5qqSXzWaYBba2Cb7dtfAa+my9BDId49eU5mUw7aDeud+XXdrMd7oLp389r3o
+60p+54FYbi6dfvj+ilHYxyW/9xhWGyfdGS1c+E1j2A9L/qfunEDBPdBdhs7+
+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
+" alt="Screenshot of Movable Type 'Text Formatting' Menu" />
+
+<p>Markdown translates your posts to HTML when you publish; the posts
+themselves are stored in your MT database in Markdown format.</p></li>
+<li><p>If you also install SmartyPants 1.5 (or later), Markdown will
+offer a second text formatting option: "Markdown With
+SmartyPants". This option is the same as the regular "Markdown"
+formatter, except that it automatically uses SmartyPants to create
+typographically correct curly quotes, em-dashes, and ellipses. See
+the <a href="http://daringfireball.net/projects/smartypants/">SmartyPants web page</a> for more information.</p></li>
+<li><p>To make Markdown (or "Markdown With SmartyPants") your default
+text formatting option for new posts, go to Weblog Config:
+Preferences.</p></li>
+</ol>
+
+
+<p>Note that by default, Markdown produces XHTML output. To configure
+Markdown to produce HTML 4 output, see "Configuration", below.</p>
+
+<h3>Blosxom </h3>
+
+<p>Markdown works with Blosxom version 2.0 or later.</p>
+
+<ol>
+<li><p>Rename the "Markdown.pl" plug-in to "Markdown" (case is
+important). Movable Type requires plug-ins to have a ".pl"
+extension; Blosxom forbids it.</p></li>
+<li><p>Copy the "Markdown" plug-in file to your Blosxom plug-ins folder.
+If you're not sure where your Blosxom plug-ins folder is, see the
+Blosxom documentation for information.</p></li>
+<li><p>That's it. The entries in your weblog will now automatically be
+processed by Markdown.</p></li>
+<li><p>If you'd like to apply Markdown formatting only to certain
+posts, rather than all of them, Markdown can optionally be used in
+conjunction with Blosxom's <a href="http://www.blosxom.com/plugins/meta/meta.htm">Meta</a> plug-in. First, install the
+Meta plug-in. Next, open the Markdown plug-in file in a text
+editor, and set the configuration variable <code>$g_blosxom_use_meta</code>
+to 1. Then, simply include a "<code>meta-markup: Markdown</code>" header line
+at the top of each post you compose using Markdown.</p></li>
+</ol>
+
+
+<h3>BBEdit </h3>
+
+<p>Markdown works with BBEdit 6.1 or later on Mac OS X. It also works
+with BBEdit 5.1 or later and MacPerl 5.6.1 on Mac OS 8.6 or later. If
+you're running Mac OS X 10.2 (Jaguar), you may need to install the
+Perl module <a href="http://search.cpan.org/dist/Digest-MD5/MD5.pm">Digest::MD5</a> from CPAN; Digest::MD5 comes
+pre-installed on Mac OS X 10.3 (Panther).</p>
+
+<ol>
+<li><p>Copy the "Markdown.pl" file to appropriate filters folder in your
+"BBEdit Support" folder. On Mac OS X, this should be:</p>
+
+<pre><code>BBEdit Support/Unix Support/Unix Filters/
+</code></pre>
+
+<p>See the BBEdit documentation for more details on the location of
+these folders.</p>
+
+<p>You can rename "Markdown.pl" to whatever you wish.</p></li>
+<li><p>That's it. To use Markdown, select some text in a BBEdit document,
+then choose Markdown from the Filters sub-menu in the "#!" menu, or
+the Filters floating palette</p></li>
+</ol>
+
+
+<h2>Configuration  <a id="configuration"></a></h2>
+
+<p>By default, Markdown produces XHTML output for tags with empty elements.
+E.g.:</p>
+
+<pre><code>&lt;br /&gt;
+</code></pre>
+
+<p>Markdown can be configured to produce HTML-style tags; e.g.:</p>
+
+<pre><code>&lt;br&gt;
+</code></pre>
+
+<h3>Movable Type </h3>
+
+<p>You need to use a special <code>MTMarkdownOptions</code> container tag in each
+Movable Type template where you want HTML 4-style output:</p>
+
+<pre><code>&lt;MTMarkdownOptions output='html4'&gt;
+    ... put your entry content here ...
+&lt;/MTMarkdownOptions&gt;
+</code></pre>
+
+<p>The easiest way to use MTMarkdownOptions is probably to put the
+opening tag right after your <code>&lt;body&gt;</code> tag, and the closing tag right
+before <code>&lt;/body&gt;</code>.</p>
+
+<p>To suppress Markdown processing in a particular template, i.e. to
+publish the raw Markdown-formatted text without translation into
+(X)HTML, set the <code>output</code> attribute to 'raw':</p>
+
+<pre><code>&lt;MTMarkdownOptions output='raw'&gt;
+    ... put your entry content here ...
+&lt;/MTMarkdownOptions&gt;
+</code></pre>
+
+<h3>Command-Line </h3>
+
+<p>Use the <code>--html4tags</code> command-line switch to produce HTML output from a
+Unix-style command line. E.g.:</p>
+
+<pre><code>% perl Markdown.pl --html4tags foo.text
+</code></pre>
+
+<p>Type <code>perldoc Markdown.pl</code>, or read the POD documentation within the
+Markdown.pl source code for more information.</p>
+
+<h2>Acknowledgements <a id="acknowledgements" /></h2>
+
+<p><a href="http://www.aaronsw.com/">Aaron Swartz</a> deserves a tremendous amount of credit for helping to
+design Markdown's formatting syntax. Markdown is <em>much</em> better thanks
+to Aaron's ideas, feedback, and testing. Also, Aaron's <a href="http://www.aaronsw.com/2002/html2text/">html2text</a>
+is a very handy (and free) utility for turning HTML into
+Markdown-formatted plain text.</p>
+
+<p><a href="http://bumppo.net/">Nathaniel Irons</a>, <a href="http://hivelogic.com/">Dan Benjamin</a>, <a href="http://waferbaby.com/">Daniel Bogan</a>, and <a href="http://pressedpants.com/">Jason Perkins</a>
+also deserve thanks for their feedback.</p>
+
+<p><a href="http://www.michelf.com/projects/php-markdown/">Michel Fortin</a> has ported Markdown to PHP; it's a splendid port, and highly recommended for anyone looking for a PHP implementation of Markdown.</p>
+
+  </div>
+
+</body>
+</html>
