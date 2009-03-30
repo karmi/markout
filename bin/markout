@@ -1,0 +1,56 @@
+#!/usr/bin/env ruby
+
+require 'rubygems'
+require 'optparse'
+
+require File.join( File.join(File.dirname(__FILE__), '..', 'lib', 'markout') )
+
+opts = {}
+
+def die(msg)
+  STDERR.puts("\033[41;1mError!\033[0m\n" + msg)
+  exit 1
+end
+
+OptionParser.new do |o|
+  o.banner = "USAGE: #{$0} [options] [path/to/file]"
+
+  o.on("-f",
+       "--format   [FORMAT]",
+       "Output format (html, pdf)") do |f|
+    opts[:format] = f
+  end
+
+  o.on("-t",
+       "--template [TEMPLATE]",
+       "Output template") do |t|
+    opts[:template] = t
+  end
+
+  o.on("-o",
+       "--output [path/to/directory]",
+       "Output directory (default: same as source file)") do |d|
+    die('Output directory does not exist!') unless File.exist?(d)
+    opts[:output] = d
+  end
+
+  o.on("-h", "--help", "Show help") do |h|
+    puts o
+    exit
+  end
+end.parse!
+
+die("You need to provide path to a Markdown formatted text file!
+     USAGE: #{$0} [options] [path/to/file]
+     Type #{$0} -h for help") if ARGV.empty?
+
+begin
+  time = Time.now
+  o = Markout::Output.new( ARGV.first, opts )
+  puts "\033[0mConverting \033[1m#{ARGV[0]}\033[30;0m to \033[1m#{o.output_path}\033[0m"
+  o.export(true)
+  puts "\033[42mMarkout finished\033[0m in #{sprintf('%.2f', Time.now-time)} seconds\n"
+rescue Exception => e
+  puts "\033[41;1mMarkout Failed!\033[0m\n"
+  raise e
+end
