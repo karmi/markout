@@ -11,7 +11,7 @@ module Markout
       @path      = File.expand_path(path)
       @base_path = Pathname.new( File.dirname(@path) )
       raise FileNotFound, "File #{@path} not found" unless File.exist?(@path)
-      # TODO: Raise error for non-text file
+      raise FileNotSupported, "File #{@path} is not plain text" unless MIME::Types.type_for(@path).any? { |type| type.media_type == 'text' }
       @content   = File.read(path)
     end
 

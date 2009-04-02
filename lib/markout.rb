@@ -4,6 +4,7 @@ $LOAD_PATH << File.join( File.dirname(__FILE__), 'markout' )
 
 module Markout
 
-  class FileNotFound < Exception; end
+  class FileNotFound     < StandardError; end
+  class FileNotSupported < StandardError; end
 
 end
