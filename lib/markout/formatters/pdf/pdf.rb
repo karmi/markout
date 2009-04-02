@@ -1,3 +1,5 @@
+$KCODE = 'UTF-8'
+
 require 'tempfile'
 require File.join(File.dirname(__FILE__), '..', 'html', 'html.rb')
 
@@ -19,7 +21,8 @@ module Markout
 
     def tempfile
       tempfile = Tempfile.new(File.basename(@document.path) + '.html')
-      tempfile << Markout::Html.new(@document).export
+      content  = Markout::Html.new(@document).export
+      tempfile << content.gsub(/[^\x00-\x7F]/) { |ch| "&##{ch.unpack("U")[0]};" } # From the Textmate Markdown bundle
     end
 
   end
