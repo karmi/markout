@@ -13,5 +13,9 @@ def fixture_file(name)
   File.join(File.dirname(__FILE__), 'fixtures', name.to_s)
 end
 
+def fixtures_path
+  Pathname.new( File.join(File.dirname(__FILE__), 'fixtures') )
+end
+
 class Test::Unit::TestCase
 end
