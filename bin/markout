@@ -21,6 +21,12 @@ OptionParser.new do |o|
     opts[:format] = f
   end
 
+  o.on("-h",
+       "--history",
+       "Output document history based on Git repository info") do |h|
+    opts[:history] = !h.nil?
+  end
+
   o.on("-t",
        "--template [TEMPLATE]",
        "Output template") do |t|
@@ -34,7 +40,7 @@ OptionParser.new do |o|
     opts[:output] = d
   end
 
-  o.on("-h", "--help", "Show help") do |h|
+  o.on("--help", "Show help") do |h|
     puts o
     exit
   end
@@ -42,7 +48,7 @@ end.parse!
 
 die("You need to provide path to a Markdown formatted text file!
      USAGE: #{$0} [options] [path/to/file]
-     Type #{$0} -h for help") if ARGV.empty?
+     Type #{$0} --help for help") if ARGV.empty?
 
 begin
   time = Time.now

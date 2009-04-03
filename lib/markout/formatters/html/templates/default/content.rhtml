@@ -15,13 +15,31 @@
   <%= print_style %>
   </style>
 
+  <%= syntax_highlighter %>
+
 </head>
 
 <body>
 
   <div id="content">
 <%= content %>
-  </div>
+  </div><!-- /#content -->
+
+  <% if history %>
+  <div id="history">
+    <h2>History</h2>
+    <% history.revisions.each do |revision| %>
+    <div class="revision">
+      <h4><%= revision.date %> : <%= revision.subject %> (<%= revision.author %>)</h4>
+      <pre>
+<code class="diff">
+<%= revision.diff %>
+</code>
+      </pre>
+    </div><!-- /.revision -->
+    <% end %>
+  </div><!-- /#history -->
+  <% end %>
 
 </body>
 </html>

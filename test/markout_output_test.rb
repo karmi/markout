@@ -14,7 +14,7 @@ module Markout
 
     def test_export
       default_output
-      assert_equal fixture('markdown.html'), @output.export
+      assert_equal fixture('markdown.html'), @output.export, "Exported text does not match output"
     end
 
     def test_export_to_file
@@ -22,7 +22,7 @@ module Markout
     end
 
     def default_output
-      @output = Output.new( fixture_file('markdown.txt') )
+      @output = Output.new( fixture_file('markdown.txt'), :history => false )
     end
 
   end

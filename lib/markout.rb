@@ -1,6 +1,6 @@
 $LOAD_PATH << File.join( File.dirname(__FILE__), 'markout' )
 
-%w{output document formatter}.each { |lib| require lib }
+%w{output document formatter history revision}.each { |lib| require lib }
 
 module Markout
 

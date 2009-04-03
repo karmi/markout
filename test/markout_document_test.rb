@@ -26,7 +26,7 @@ module Markout
     end
 
     def new_valid_document
-      @document = Document.new( fixture_file('markdown.txt') )
+      @document = Document.new( fixture_file('markdown.txt'), :history => false )
     end
 
   end

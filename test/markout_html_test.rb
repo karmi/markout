@@ -6,7 +6,7 @@ module Markout
   class HtmlTest < Test::Unit::TestCase
 
     def setup
-      @document = Document.new( fixture_file('markdown.txt') )
+      @document = Document.new( fixture_file('markdown.txt'), :history => false )
     end
 
     def test_should_set_default_template

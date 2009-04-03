@@ -6,8 +6,8 @@ module Markout
 
     def initialize(path, options = {})
       @path      = path
-      @document  = Document.new(@path)
       @options   = options
+      @document  = Document.new(@path, :history => @options[:history])
       @format    = @options[:format]   || 'html'
       @formatter = pick_formatter.new( @document, :template => @options[:template] || 'default' )
       @output    = ''
