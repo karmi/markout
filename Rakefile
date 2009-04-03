@@ -9,6 +9,10 @@ begin
     gem.email = "karmi@karmi.cz"
     gem.homepage = "http://github.com/karmi/markout"
     gem.authors = ["Karel Minarik"]
+    gem.add_dependency 'schacon-grit'
+    gem.add_dependency 'rdiscount'
+    gem.add_dependency 'mime-types'
+
     # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
   end
 rescue LoadError
