@@ -1,11 +1,9 @@
+.diff ins,
 .diff .ins {
   color: green;
-/*  background-color: rgba(0, 0, 0, 0.03);*/
-  background-color: #f0f5f1;
 }
 
+.diff del,
 .diff .del {
   color: red;
-/*  background-color: rgba(0, 0, 0, 0.03);*/
-  background-color: #f0f5f1;
 }

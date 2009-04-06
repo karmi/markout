@@ -163,9 +163,11 @@ hr { display: none; }
 }
 
 #history .revision pre {
+  background: none;
+  line-height: 120%;
   border: none;
   margin: 0;
-  padding: 0;
+  padding: 0 1em 0 1em;
 }
 
 #history .revision code {

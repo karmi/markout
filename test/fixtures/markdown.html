@@ -172,9 +172,11 @@ hr { display: none; }
 }
 
 #history .revision pre {
+  background: none;
+  line-height: 120%;
   border: none;
   margin: 0;
-  padding: 0;
+  padding: 0 1em 0 1em;
 }
 
 #history .revision code {
@@ -407,21 +409,19 @@ CodeHighlighter.init = function() {
 	}
 }</script><script type="text/javascript">CodeHighlighter.addStyle("diff",{
 	ins : {
-		exp  : /\+[^\n]+/
+		exp  : /\+[^\n]*/
 	},
 	del : {
-		exp  : /\-[^\n]+/
+		exp  : /\-[^\n]*/
 	}
-});</script><style type="text/css" media="screen">.diff .ins {
+});</script><style type="text/css" media="screen">.diff ins,
+.diff .ins {
   color: green;
-/*  background-color: rgba(0, 0, 0, 0.03);*/
-  background-color: #f0f5f1;
 }
 
+.diff del,
 .diff .del {
   color: red;
-/*  background-color: rgba(0, 0, 0, 0.03);*/
-  background-color: #f0f5f1;
 }</style>
   <script type="text/javascript">/*
  * jQuery JavaScript Library v1.3.2

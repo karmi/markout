@@ -23,7 +23,7 @@ module Markout
     def load_revisions
       @repo ||= load_repository
       commits = @repo.log 'master', @document.filename
-      @revisions = commits.collect { |c| Markout::Revision.new(c) }
+      @revisions = commits.collect { |c| Markout::Revision.new(@repo, c) }
       # puts @revisions
     end
   end
