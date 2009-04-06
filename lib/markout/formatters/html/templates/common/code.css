@@ -1,9 +1,11 @@
 .diff ins,
 .diff .ins {
   color: green;
+  text-decoration: none;
 }
 
 .diff del,
 .diff .del {
   color: red;
+  text-decoration: none;
 }

@@ -174,3 +174,15 @@ hr { display: none; }
   margin: 0;
   padding: 0;
 }
+
+#history .diff ins,
+#history .diff .ins {
+  color: green;
+  text-decoration: none;
+}
+
+#history .diff del,
+#history .diff .del {
+  color: red;
+  text-decoration: none;
+}
