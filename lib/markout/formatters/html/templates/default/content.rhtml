@@ -22,7 +22,7 @@
   <div id="history_header">
     <p>Last revision: 
       <strong><%= history.revisions.first.subject %></strong>
-      <em>(<%= history.revisions.first.author %>, <%= history.revisions.first.date.strftime('%m/%d/%Y %H:%M') %>)</em> | 
+      <em>(<%= history.revisions.first.author %>, <%= history.revisions.first.date.strftime('%d/%m/%Y %H:%M') %>)</em> | 
       <a href="#history">History</a>
       <!-- <strong class="new_revisions">(3 new)</strong> -->
     </p>
@@ -40,7 +40,7 @@
     <h2>History</h2>
     <% history.revisions.each do |revision| %>
     <div id="revision_<%= revision.sha %>" class="revision">
-      <h4><%= revision.date.strftime('%m/%d/%Y %H:%M') %> : <%= revision.subject %> (<%= revision.author %>)</h4>
+      <h4><%= revision.date.strftime('%d/%m/%Y %H:%M') %> : <%= revision.subject %> (<%= revision.author %>)</h4>
       <div class="detail">
       <pre>
 <code class="diff">
