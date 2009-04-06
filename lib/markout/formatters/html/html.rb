@@ -41,6 +41,14 @@ module Markout
       s << '<style type="text/css" media="screen">' + File.read( template_path.join('..', 'common', 'code.css') ) + '</style>'
     end
 
+    def jquery
+      File.read( template_path.join('..', 'common', 'jquery-1.3.2.min.js') )
+    end
+
+    def application_js
+      File.read( template_path.join('..', 'common', 'application.js') )
+    end
+
     def title
       h1  = content.match(/<h1\s*.*>(.+)<\/h1>/)[1] rescue nil
       h1 || ''

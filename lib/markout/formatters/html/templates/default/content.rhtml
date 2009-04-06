@@ -7,19 +7,29 @@
 
 	<title><%= title %></title>
 
-  <style type="text/css" media="screen">
-  <%= screen_style %>
-  </style>
-
-  <style type="text/css" media="print">
-  <%= print_style %>
-  </style>
+  <style type="text/css" media="screen"><%= screen_style %></style>
+  <style type="text/css" media="print"><%= print_style %></style>
 
   <%= syntax_highlighter %>
+  <script type="text/javascript"><%= jquery %></script>
+  <script type="text/javascript"><%= application_js %></script>
 
 </head>
 
 <body>
+
+  <% if history %>
+  <div id="history_header">
+    <p>Last revision: 
+      <strong><%= history.revisions.first.subject %></strong>
+      <em>(<%= history.revisions.first.author %>, <%= history.revisions.first.date.strftime('%m/%d/%Y %H:%M') %>)</em> | 
+      <a href="#history">History</a>
+      <!-- <strong class="new_revisions">(3 new)</strong> -->
+    </p>
+  </div><!-- /history_header -->
+  <% end %>
+
+<div id="container">
 
   <div id="content">
 <%= content %>
@@ -29,17 +39,21 @@
   <div id="history">
     <h2>History</h2>
     <% history.revisions.each do |revision| %>
-    <div class="revision">
-      <h4><%= revision.date %> : <%= revision.subject %> (<%= revision.author %>)</h4>
+    <div id="revision_<%= revision.sha %>" class="revision">
+      <h4><%= revision.date.strftime('%m/%d/%Y %H:%M') %> : <%= revision.subject %> (<%= revision.author %>)</h4>
+      <div class="detail">
       <pre>
 <code class="diff">
 <%= revision.diff %>
 </code>
       </pre>
+      </div><!-- /detail -->
     </div><!-- /.revision -->
     <% end %>
   </div><!-- /#history -->
   <% end %>
+
+</div><!-- /container -->
 
 </body>
 </html>

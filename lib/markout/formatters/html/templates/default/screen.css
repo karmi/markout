@@ -17,16 +17,35 @@ body {
   font-size: 85%;
   line-height: 155%;
   margin: 0;
-  padding: 0 5em;
+/*  padding: 0 5em;*/
 }
 
 .cleaner
   { clear: both; height: 0; line-height: 0; width: 0; border: 0; font-size: 1px; }
 
+#container {
+  margin: 0 5em;
+}
+
+#history_header {
+  color: #525c66;
+  padding: 0.6em 5em 0em 1em;
+  text-align: right;
+}
+#history_header p {
+  padding: 0; margin: 0;
+}
+
+#history_header a {
+  color: #525c66;
+}
+#history_header .new_revisions {
+  color: #ff3d00;
+}
+
 #content {
   color: #172533;
   font-size: 1.1em;
-  max-width: 55em;
   padding-bottom: 4em;
   margin: 7px auto;
   margin-bottom: 4em;
@@ -46,7 +65,7 @@ h1 a, h2 a { color: #172533; }
 h1 {
   font-size: 2.25em;
   letter-spacing: -1px;
-  margin-bottom: 0.5em;
+  margin: 1em 0 0.5em 0;
 }
 
 h2 {
@@ -100,3 +119,56 @@ pre {
 }
 
 hr { display: none; }
+
+#history {
+  margin-bottom: 2em;
+}
+
+#history h2,
+#history h3,
+#history h4 {
+  border: none;
+}
+
+#history h2 {
+  padding-bottom: 0.2em;
+  padding-left: 0.5em;
+  margin: 0;
+  border-bottom: 2px solid #dfe2e5;
+}
+
+#history code {
+  font-size: 80%;
+}
+
+#history .revision {
+  border-bottom: 1px solid #dfe2e5;
+  padding: 0.5em 0 0.5em 0;
+}
+#history .revision:hover,
+#history .revision.expanded {
+  background-color: #dfe2e5;
+}
+
+#history .revision h4 {
+  margin: 0;
+  padding: 0 0 0 0.7em;
+}
+#history .revision.expanded h4 {
+}
+
+#history .revision .detail {
+  margin: 0 4px 0 4px;
+  padding: 0;
+}
+
+#history .revision pre {
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
+#history .revision code {
+  margin: 0;
+  padding: 0;
+}
