@@ -4,19 +4,34 @@ Markout makes it easy to export sexy formatted documents such as specifications 
 
 Designed for easy extending, theming and adding output formats.
 
-More information soon.
+Work in progress.
 
 
 == Usage
 
-On the command line:
+Installation:
 
     $ sudo gem install karmi-markout --source=http://gems.github.com
+
+Converting Markdown file with history to an HTML file in the same location as source:
+
+    $ markout -h /path/to/your/file.txt
+    
+More information:
+
+    $ markout --help
 
 
 == Todo
 
-[!] Visualize document history based on Git information
+* Cleanup Git-related code
+* Add test coverage
+* Embedded Sinatra app for more lush display of everything on the server
+* More flexibility in Git features
+* Cleaner PDF dependencies
+* Setting-up remote Git repo and post-receive hooks with simple Rake tasks
+* Notifications on new revision pushes
+
 
 == Copyright
 
