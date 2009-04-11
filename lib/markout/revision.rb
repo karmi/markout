@@ -1,8 +1,10 @@
+require 'rdiscount'
+
 module Markout
 
   class Revision
 
-    attr_reader :sha, :date, :author, :subject, :message
+    attr_reader :sha, :date, :author, :subject
 
     def initialize(repo, commit)
       @repo   = repo
@@ -22,10 +24,19 @@ module Markout
       end
     end
 
+    def message(options={})
+      case options[:format]
+      when :html
+        return RDiscount.new(@message).to_html
+      else
+        return @message
+      end
+    end
+
     private
 
     def parse_commit_message(commit)
-      lines = commit.message.split("/n")
+      lines = commit.message.split("\n")
       [ lines.first, lines[1..commit.message.size].join("\n") ]
     end
 

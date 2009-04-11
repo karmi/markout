@@ -41,6 +41,7 @@
     <div id="revision_<%= revision.sha %>" class="revision">
       <h4><%= revision.date.strftime('%d/%m/%Y %H:%M') %> : <%= revision.subject %> (<%= revision.author %>)</h4>
       <div class="detail">
+      <% if revision.message %><%= revision.message(:format => :html) %><% end %>
       <pre>
 <code class="diff">
 <%= revision.diff(:format => 'inline') %>
