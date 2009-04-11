@@ -80,8 +80,10 @@ h3 {
   color: #172533;
   font-size: 1.1em;
   font-weight:bold;
-  margin: 1.8em 0 0.25em 0;
   letter-spacing:-1px;
+  padding: 1em 0 0 0;
+  margin: 1.8em 0 0.25em 0;
+  border-top: 1px solid #d8dde3;
 }
 
 h3 a {
@@ -119,6 +121,9 @@ pre {
 }
 
 hr { display: none; }
+
+ul { list-style-type: square; margin: 0.5em 0 1em 0; padding-left: 1.5em; }
+ul li { margin-left: 0em; }
 
 #history {
   margin-bottom: 2em;
@@ -184,5 +189,5 @@ hr { display: none; }
 #history .diff del,
 #history .diff .del {
   color: red;
-  text-decoration: none;
+  text-decoration: line-through;
 }
