@@ -163,8 +163,12 @@ ul li { margin-left: 0em; }
 }
 
 #history .revision .detail {
-  margin: 0 4px 0 4px;
+  margin: 0 0.8em 0 0.8em;
   padding: 0;
+}
+
+#history .revision .detail p {
+  font-size: 95%;
 }
 
 #history .revision pre {
@@ -175,6 +179,9 @@ ul li { margin-left: 0em; }
   padding: 0 1em 0 1em;
 }
 
+#history .revision pre {
+  margin: 0 0.1em 0 0.1em;
+}
 #history .revision code {
   margin: 0;
   padding: 0;
