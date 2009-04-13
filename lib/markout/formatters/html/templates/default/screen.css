@@ -162,10 +162,12 @@ ul li { margin-left: 0em; }
 }
 
 #history .revision h4 {
+  font-size: 95%;
   margin: 0;
   padding: 0 0 0 0.7em;
 }
 #history .revision.expanded h4 {
+  font-size: 100%;
 }
 
 #history .revision .detail {
