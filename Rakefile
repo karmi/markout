@@ -4,16 +4,17 @@ require 'rake'
 begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|
+    # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
     gem.name = "markout"
     gem.summary = %Q{Sexy Markdown output}
     gem.email = "karmi@karmi.cz"
     gem.homepage = "http://github.com/karmi/markout"
     gem.authors = ["Karel Minarik"]
+    gem.files = FileList["[A-Z]*.*", "lib/**/*"] # Lifted from mojombo-grit
+
     gem.add_dependency 'schacon-grit'
     gem.add_dependency 'rdiscount'
     gem.add_dependency 'mime-types'
-
-    # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
   end
 rescue LoadError
   puts "Jeweler not available. Install it with: sudo gem install technicalpickles-jeweler -s http://gems.github.com"
