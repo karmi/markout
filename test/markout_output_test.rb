@@ -1,8 +1,13 @@
 require File.join(File.dirname(__FILE__), 'test_helper')
 require 'markout/output'
+require 'tempfile'
 
 module Markout
   class OutputTest < Test::Unit::TestCase
+
+    def setup
+      default_output
+    end
 
     def test_default_initialization
       assert_nothing_raised { default_output }
@@ -13,13 +18,15 @@ module Markout
     end
 
     def test_export
-      default_output
-      assert_equal fixture('markdown.html'), @output.export, "Exported text does not match output"
+      tmpfile = Tempfile.new('markout_test.html')
+      tmpfile.puts @output.export
+      tmpfile.close
+      # Hats down to @kubicek for the "let's diff huge chunks of text in tests!" idea!!!
+      diff = `diff -u #{File.expand_path(File.dirname(__FILE__))}/fixtures/markdown.html #{tmpfile.path}`
+      assert diff.chomp == '', "Fixture HTML does not match Markout output, see diff below:\n" + diff
     end
 
-    def test_export_to_file
-      # TODO
-    end
+    private
 
     def default_output
       @output = Output.new( fixture_file('markdown.txt'), :history => false )
