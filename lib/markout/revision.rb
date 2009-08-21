@@ -1,4 +1,5 @@
 require 'rdiscount'
+require 'cgi'
 
 module Markout
 
@@ -27,7 +28,7 @@ module Markout
     def message(options={})
       case options[:format]
       when :html
-        return RDiscount.new(@message).to_html
+        return RDiscount.new( CGI::escapeHTML(@message) ).to_html
       else
         return @message
       end
