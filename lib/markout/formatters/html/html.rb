@@ -2,6 +2,7 @@ require 'rdiscount'
 require 'erb'
 require 'base64'
 require 'mime/types'
+require 'cgi'
 
 module Markout
 
@@ -56,6 +57,10 @@ module Markout
 
     def history
       @document.history
+    end
+
+    def h(html)
+      CGI::escapeHTML(html.to_s)
     end
 
     private
