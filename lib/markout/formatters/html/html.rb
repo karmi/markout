@@ -9,7 +9,7 @@ module Markout
   class Html < Formatter
 
     def export
-      suck_in_images!
+      suck_in_images! unless @options[:no_embed_images]
       ERB.new( File.read(template_path.join('content.rhtml')) ).result(binding)
     end
 
@@ -50,6 +50,7 @@ module Markout
       File.read( template_path.join('..', 'common', 'application.js') )
     end
 
+    # TODO : Move into document
     def title
       h1  = content.match(/<h1\s*.*>(.+)<\/h1>/)[1] rescue nil
       h1 || ''
