@@ -18,6 +18,7 @@ module Markout
       @history   = Markout::History.new(self, :git_dir => @options[:git_dir]) if @options[:history]
     end
 
+    # TODO: 'title' method from main header
   end
 
 end
