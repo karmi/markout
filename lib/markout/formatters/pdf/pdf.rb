@@ -12,7 +12,7 @@ module Markout
       `cat "#{tempfile.path}" | /opt/local/bin/htmldoc -t pdf \
           --bodyfont "Helvetica" --headfootfont "Helvetica" \
           --no-compression --color --embedfonts \
-          --header "" --footer .1. --links --no-title \
+          --header "" --footer .1. --links \
           --toctitle "" --tocheader "..." --tocfooter "..." \
           -`
     end
@@ -21,7 +21,8 @@ module Markout
 
     def tempfile
       tempfile = Tempfile.new(File.basename(@document.path) + '.html')
-      content  = Markout::Html.new(@document).export
+      # FIXME : Does not display embedded images...
+      content  = Markout::Html.new(@document, :template => 'pdf', :no_embed_images => true).export
       tempfile << content.gsub(/[^\x00-\x7F]/) { |ch| "&##{ch.unpack("U")[0]};" } # From the Textmate Markdown bundle
     end
 

@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+	<title><%= title %></title>
+
+</head>
+
+<body>
+
+<div id="container">
+
+  <div id="content">
+<%= content %>
+  </div><!-- /#content -->
+
+  <% if history %>
+  <div id="history">
+    <h2>History</h2>
+    <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Date</th>
+        <th>Author</th>
+        <th>Subject</th>
+      </tr>
+    </thead>
+    <% history.revisions.reverse.each do |revision| %>
+    <tr>
+      <td><%= revision.sha[0..7] %></td>
+      <td><%= revision.date.strftime('%d/%m/%Y %H:%M') %></td>
+      <td><%= revision.author %></td>
+      <td><%= h(revision.subject) %></td>
+    </tr>
+    <% end %>
+    </table>
+  </div><!-- /#history -->
+  <% end %>
+
+</div><!-- /container -->
+
+</body>
+</html>
