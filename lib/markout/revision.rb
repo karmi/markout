@@ -9,11 +9,11 @@ module Markout
 
     def initialize(repo, commit)
       @repo   = repo
-      @sha    = commit.sha
+      @sha    = commit.sha[0,40]
       @date   = commit.date
       @author = commit.author.to_s
       @subject, @message = parse_commit_message(commit)
-      @diff   = commit.show.first.diff || ''
+      @diff   = %x[cd #{@repo.path} && git show #{@sha} 2>&1]
     end
 
     def diff(options={})
