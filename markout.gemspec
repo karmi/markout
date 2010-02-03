@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{markout}
-  s.version = "0.1.8"
+  s.version = "0.1.9"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Karel Minarik"]
-  s.date = %q{2009-11-26}
+  s.date = %q{2010-02-03}
   s.default_executable = %q{markout}
   s.email = %q{karmi@karmi.cz}
   s.executables = ["markout"]
@@ -43,7 +43,7 @@ Gem::Specification.new do |s|
   s.homepage = %q{http://github.com/karmi/markout}
   s.rdoc_options = ["--charset=UTF-8"]
   s.require_paths = ["lib"]
-  s.rubygems_version = %q{1.3.3}
+  s.rubygems_version = %q{1.3.5}
   s.summary = %q{Sexy Markdown output}
   s.test_files = [
     "test/markout_document_test.rb",
