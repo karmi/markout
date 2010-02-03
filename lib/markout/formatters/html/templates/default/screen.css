@@ -127,7 +127,7 @@ pre {
   white-space: pre-wrap; white-space: -moz-pre-wrap !important;
 }
 
-hr { display: none; }
+hr { background: #d8dde3; color:#fff; height: 1px; margin: 1em 0 1em 0; border:none; }
 
 ul { list-style-type: square; margin: 0.5em 0 1em 0; padding-left: 1.5em; }
 ul li { margin-left: 0em; }
