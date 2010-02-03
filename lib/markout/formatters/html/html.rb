@@ -35,6 +35,12 @@ module Markout
       File.read template_path.join('print.css')
     end
 
+    # TODO : Tests, doc
+    def custom_style
+      css_file = @document.base_path.join('style.css')
+      @custom_style ||= css_file && File.exist?(css_file) ? File.read(css_file) : nil
+    end
+
     def syntax_highlighter
       s = ''
       s << '<script type="text/javascript">' + File.read( template_path.join('..', 'common', 'code_highlighter.js') ) + '</script>'

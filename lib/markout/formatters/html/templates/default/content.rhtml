@@ -9,6 +9,7 @@
 
   <style type="text/css" media="screen"><%= screen_style %></style>
   <style type="text/css" media="print"><%= print_style %></style>
+  <% if custom_style %><style type="text/css" media="screen"><%= custom_style %></style><% end %>
 
   <script type="text/javascript"><%= jquery %></script>
   <script type="text/javascript"><%= application_js %></script>
